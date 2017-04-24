@@ -59,7 +59,7 @@
   {{#if resume.basics.summary}}
   <div id='summaryBlock' class="sectionBlock">
     <div class='sectionName'>
-      <span>SUMMARY</span>
+      <span>简介</span>
     </div>
     <div class='sectionContent'>
       <span>{{resume.basics.summary}}</span>
@@ -71,7 +71,7 @@
 	{{#if resume.work.length}}
   <div id='workBlock' class="sectionBlock">
     <div class='sectionName'>
-      <span>EXPERIENCE</span>
+      <span>实习经历</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.work}}
@@ -109,10 +109,48 @@
   <div class='sectionLine'></div>
 	{{/if}}
 
+  {{#if resume.education.length}}
+	<div id='education' class="sectionBlock">
+    <div class='sectionName'>
+      <span>教育背景</span>
+    </div>
+    <div class='sectionContent'>
+      {{#each resume.education}}
+      <div class='educationBlock'>
+        <span class='title'>
+          {{#if institution}}{{institution}}{{/if}}
+        </span>
+        {{#if startDate}}
+        <span class='date'>
+          {{#if startDate}}{{startDate}}{{/if}} &mdash; {{#if endDate}}{{endDate}}{{else}}Present{{/if}}
+        </span>
+        {{/if}}
+        <div class=''>
+          {{#if studyType}}{{studyType}} {{/if}} - {{#if area}}{{area}}{{/if}}{{#if gpa}}, GPA: {{gpa}}{{/if}}
+        </div>
+        {{#if courses.length}}
+        <div id='coursesBlock'>
+          {{#each courses}}
+          <ul class='coursesList'>
+            {{#each .}}
+            <li class='course'>{{.}}</li>
+            {{/each}}
+          </ul>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+      {{#unless @last}}<div class='separator'></div>{{/unless}}
+      {{/each}}
+    </div>
+	</div>
+  <div class='sectionLine'></div>
+	{{/if}}
+
 	{{#if resume.publications.length}}
 	<div id='publications'>
     <div class='sectionName'>
-      <span>PUBLICATIONS</span>
+      <span>学术论文</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.publications}}
@@ -148,7 +186,7 @@
 	{{#if resume.awards.length}}
 	<div id='awards' class="sectionBlock">
     <div class='sectionName'>
-      <span>AWARDS</span>
+      <span>获奖情况</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.awards}}
@@ -179,7 +217,7 @@
 	{{#if resume.volunteer.length}}
 	<div id='volunteer' class="sectionBlock">
     <div class='sectionName'>
-      <span>VOLUNTEERING</span>
+      <span>志愿工作</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.volunteer}}
@@ -208,48 +246,10 @@
   <div class='sectionLine'></div>
 	{{/if}}
 
-	{{#if resume.education.length}}
-	<div id='education' class="sectionBlock">
-    <div class='sectionName'>
-      <span>EDUCATION</span>
-    </div>
-    <div class='sectionContent'>
-      {{#each resume.education}}
-      <div class='educationBlock'>
-        <span class='title'>
-          {{#if institution}}{{institution}}{{/if}}
-        </span>
-        {{#if startDate}}
-        <span class='date'>
-          {{#if startDate}}{{startDate}}{{/if}} &mdash; {{#if endDate}}{{endDate}}{{else}}Present{{/if}}
-        </span>
-        {{/if}}
-        <div class=''>
-          {{#if studyType}}{{studyType}} {{/if}} - {{#if area}}{{area}}{{/if}}{{#if gpa}}, GPA: {{gpa}}{{/if}}
-        </div>
-        {{#if courses.length}}
-        <div id='coursesBlock'>
-          {{#each courses}}
-          <ul class='coursesList'>
-            {{#each .}}
-            <li class='course'>{{.}}</li>
-            {{/each}}
-          </ul>
-          {{/each}}
-        </div>
-        {{/if}}
-      </div>
-      {{#unless @last}}<div class='separator'></div>{{/unless}}
-      {{/each}}
-    </div>
-	</div>
-  <div class='sectionLine'></div>
-	{{/if}}
-
 	{{#if resume.skills.length}}
 	<div id='skills' class="sectionBlock">
     <div class='sectionName'>
-      <span>SKILLS</span>
+      <span>技能</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.skills}}
@@ -275,7 +275,7 @@
 	{{#if resume.languages.length}}
 	<div id='languages' class="sectionBlock">
     <div class='sectionName'>
-      <span>LANGUAGES</span>
+      <span>语言能力</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.languages}}
@@ -293,7 +293,7 @@
 	{{#if resume.interests.length}}
 	<div id='interests' class="sectionBlock">
     <div class='sectionName'>
-      <span>INTERESTS</span>
+      <span>兴趣</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.interests}}
