@@ -1,6 +1,9 @@
+# Fork Purpose
+Use Chinese.
+
 # jsonresume-theme-onepage
 
-A compact theme for JSON Resume, designed for printing. 
+A compact theme for JSON Resume, designed for printing.
 
 Tries to fit as much information as possible onto a single page without making sections look cluttered.
 
@@ -32,4 +35,3 @@ For the "experience" and "skills" sections, you can optionally replace the "high
 ```
 
 See included resume.json for more details.
-
